@@ -12,13 +12,13 @@ import java.util.Scanner;
 public class InscripcionesVista {
     private Scanner scanner;
 
-    public ExcursionesControlador excursionesControlador;
+    private ExcursionesControlador excursionesControlador;
     public SociosControlador sociosControlador;
 
-    public InscripcionesVista() {
+    public InscripcionesVista(ExcursionesControlador excursionesControlador) {
         this.scanner = new Scanner(System.in);
-        excursionesControlador = excursionesControlador;
-        sociosControlador = sociosControlador;
+        this.excursionesControlador = excursionesControlador;
+        this.sociosControlador = sociosControlador;
     }
 
     // Método para mostrar el menú de gestión de inscripciones
