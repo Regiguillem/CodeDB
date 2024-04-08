@@ -6,11 +6,10 @@ import java.util.Scanner;
 
 public class SociosVista {
     private Scanner scanner;
-    private SociosControlador sociosControlador;
+    public SociosControlador sociosControlador;
 
     public SociosVista() {
         this.scanner = new Scanner(System.in);
-        this.sociosControlador = sociosControlador;
     }
 
     public int mostrarMenu() {
@@ -98,40 +97,5 @@ public class SociosVista {
         System.out.println("Descuento en cuota: " + socioInfantil.getDescuento_cuota() + "%");
     }
 
-    public void mostrarSociosPorTipo() {
-        System.out.println("Seleccione el tipo de socios que desea ver:");
-        System.out.println("1. Socios Estándar");
-        System.out.println("2. Socios Federados");
-        System.out.println("3. Socios Infantiles");
-        System.out.println("4. Mostrar todos los socios");
-        System.out.println("0. Volver al menú anterior");
-
-        int opcion = scanner.nextInt();
-        scanner.nextLine();
-
-        switch (opcion) {
-            case 1:
-                System.out.println("Mostrando socios estándar:");
-                sociosControlador.mostrarSociosEst();
-                break;
-            case 2:
-                System.out.println("Mostrando socios federados:");
-                sociosControlador.mostrarSociosFed();
-                break;
-            case 3:
-                System.out.println("Mostrando socios infantiles:");
-                sociosControlador.mostrarSociosInf();
-                break;
-            case 4:
-                System.out.println("Mostrando todos los socios:");
-                sociosControlador.mostrarSocios();
-                break;
-            case 0:
-                System.out.println("Volviendo al menú anterior.");
-                break;
-            default:
-                System.out.println("Opción no válida.");
-        }
-    }
     //Faltan argumentos que pedir al usuario?
 }

@@ -19,6 +19,12 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        ExcursionesControlador controladorEx = new ExcursionesControlador();
+
+        SociosControlador controladorSoc = new SociosControlador();
+
+        InscripcionesControlador controladorInsc = new InscripcionesControlador();
+
         int opcion;
 
         do {
@@ -35,22 +41,13 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    ExcursionesControlador controladorEx = new ExcursionesControlador();
-                    if (!controladorEx.iniciar()) {
-                        System.out.println("Volviendo al menú principal...");
-                    }
+                    controladorEx.iniciar();
                     break;
                 case 2:
-                    SociosControlador controladorSoc = new SociosControlador();
-                    if (!controladorSoc.iniciar()) {
-                        System.out.println("Volviendo al menú principal...");
-                    }
+                    controladorSoc.iniciar();
                     break;
                 case 3:
-                    InscripcionesControlador controladorInsc = new InscripcionesControlador();
-                    if (!controladorInsc.iniciar()) {
-                        System.out.println("Volviendo al menú principal...");
-                    }
+                    controladorInsc.iniciar();
                     break;
                 case 0:
                     System.out.println("Saliendo del programa.");

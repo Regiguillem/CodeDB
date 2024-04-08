@@ -1,7 +1,6 @@
 package vista;
 
 import controlador.ExcursionesControlador;
-import controlador.InscripcionesControlador;
 import controlador.SociosControlador;
 import modelo.ExcursionesModelo;
 import modelo.InscripcionesModelo;
@@ -11,14 +10,15 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class InscripcionesVista {
-
     private Scanner scanner;
 
-    private ExcursionesControlador excursionesControlador;
-    private SociosControlador sociosControlador;
+    public ExcursionesControlador excursionesControlador;
+    public SociosControlador sociosControlador;
 
     public InscripcionesVista() {
         this.scanner = new Scanner(System.in);
+        excursionesControlador = excursionesControlador;
+        sociosControlador = sociosControlador;
     }
 
     // Método para mostrar el menú de gestión de inscripciones

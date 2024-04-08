@@ -13,18 +13,15 @@ import java.util.Iterator;
 public class InscripcionesControlador {
 
     // Atributos para relacionar la vista con el ArrayList de inscripciones
-    private InscripcionesVista vistaInsc;
-    private ArrayList<InscripcionesModelo> inscripciones;
-    private SociosControlador sociosControlador;
-    private ExcursionesControlador excursionesControlador;
+    public InscripcionesVista vistaInsc;
+    public ArrayList<InscripcionesModelo> inscripciones;
+    public SociosControlador sociosControlador;
+    public ExcursionesControlador excursionesControlador;
 
     // Constructor
     public InscripcionesControlador() {
         this.vistaInsc = new InscripcionesVista();
         this.inscripciones = new ArrayList<>();
-        this.sociosControlador = sociosControlador;
-        this.excursionesControlador = excursionesControlador;
-
     }
 
     // Método para iniciar el controlador y manejar el menú
@@ -55,7 +52,6 @@ public class InscripcionesControlador {
     // Método para agregar una inscripción solicitando datos al usuario
     private void agregarInscripcion() {
         System.out.println("Añadiendo inscripción...");
-        System.out.println("Introduzca el número de inscripción:");
         int nInscripcion = vistaInsc.solicitarNumeroInscripcion();
         ExcursionesModelo excursion = vistaInsc.solicitarExcursion();
         SociosModelo socio = vistaInsc.solicitarSocio();

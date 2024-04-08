@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class ExcursionesControlador {
 
     //Atributos para relacionar la vista con el arraylist de excursiones
-    private ExcursionesVista vistaEx;
-    private ArrayList<ExcursionesModelo> excursiones;
+    public ExcursionesVista vistaEx;
+    public ArrayList<ExcursionesModelo> excursiones;
 
     //Controlador
     //Al iniciar el controlador iniciamos la vista y el arraylist

@@ -2,15 +2,17 @@ package controlador;
 import modelo.*;
 import vista.SociosVista;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class SociosControlador {
 
+    private Scanner scanner;
     //Atributos para relacionar la vista con el arraylist de socios
     public SociosVista vistaSoc;
-    private ArrayList<SocioEstandarModelo> sociosEst;
-    private ArrayList<SociosFederadosModelo> sociosFed;
-    private ArrayList<SocioInfantilModelo> sociosInf;
+    public ArrayList<SocioEstandarModelo> sociosEst;
+    public ArrayList<SociosFederadosModelo> sociosFed;
+    public ArrayList<SocioInfantilModelo> sociosInf;
     public ArrayList<FederacionesModelo> federaciones;
     public ArrayList<SeguroModelo> seguros;
     public ArrayList<SociosModelo> listaSocios;
@@ -35,6 +37,7 @@ public class SociosControlador {
         this.federaciones = new ArrayList<>();
         this.seguros = new ArrayList<>();
         this.listaSocios = new ArrayList<>();
+        this.scanner = new Scanner(System.in);
         //Añadimos las federaciones en una lista de todas las federaciones
         federaciones.add(fedFEDME);
         federaciones.add(fedFEEC);
@@ -73,7 +76,7 @@ public class SociosControlador {
                     //eliminarSocio();
                     break;
                 case 6:
-                    vistaSoc.mostrarSociosPorTipo();
+                    mostrarSociosPorTipo();
                 case 7:
                     //mostrarFacturaMensualFiltroSocio();
                 case 0:
@@ -144,7 +147,7 @@ public class SociosControlador {
     public void mostrarSociosEst() {
         System.out.println("Lista de Socios Estándar Disponibles:");
         for (SocioEstandarModelo socio : sociosEst) {
-            System.out.println("Número de socio: " + socio.getN_socio() + ", Nombre: " + socio.getNombre());
+            System.out.println("Número de socio: " + socio.getN_socio() + ", Nombre: " + socio.getNombre() + ", Seguro: " + socio.getSeguro().getTipo());
         }
     }
 
@@ -183,7 +186,7 @@ public class SociosControlador {
         } else {
             System.out.println("Lista de socios federados:");
             for (SociosFederadosModelo socio : sociosFed) {
-                System.out.println("Nombre: " + socio.getNombre() + ", NIF: " + socio.getNif() + ", Código Federación: " + socio.getFederacion());
+                System.out.println("Nombre: " + socio.getNombre() + ", NIF: " + socio.getNif() + ", Código Federación: " + socio.getFederacion().getNombre());
             }
         }
     }
@@ -281,6 +284,42 @@ public class SociosControlador {
             }
         }
         return null; // Devuelve null si no se encuentra ningún socio con el código proporcionado
+    }
+
+    public void mostrarSociosPorTipo() {
+        System.out.println("Seleccione el tipo de socios que desea ver:");
+        System.out.println("1. Socios Estándar");
+        System.out.println("2. Socios Federados");
+        System.out.println("3. Socios Infantiles");
+        System.out.println("4. Mostrar todos los socios");
+        System.out.println("0. Volver al menú anterior");
+
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (opcion) {
+            case 1:
+                System.out.println("Mostrando socios estándar:");
+                mostrarSociosEst();
+                break;
+            case 2:
+                System.out.println("Mostrando socios federados:");
+                mostrarSociosFed();
+                break;
+            case 3:
+                System.out.println("Mostrando socios infantiles:");
+                mostrarSociosInf();
+                break;
+            case 4:
+                System.out.println("Mostrando todos los socios:");
+                mostrarSocios();
+                break;
+            case 0:
+                System.out.println("Volviendo al menú anterior.");
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
     }
     // Otros métodos para manejar las demás opciones del menú de socios
 }
