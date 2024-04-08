@@ -20,7 +20,7 @@ public class InscripcionesControlador {
 
     // Constructor
     public InscripcionesControlador() {
-        this.vistaInsc = new InscripcionesVista();
+        this.vistaInsc = new InscripcionesVista(excursionesControlador);
         this.inscripciones = new ArrayList<>();
     }
 

@@ -5,6 +5,8 @@ import modelo.ExcursionesModelo;
 import modelo.FederacionesModelo;
 import modelo.SeguroBasicoModelo;
 import modelo.SeguroCompletoModelo;
+import vista.ExcursionesVista;
+import vista.InscripcionesVista;
 
 import java.util.Scanner;
 
@@ -13,13 +15,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //Inciamos las instancias de los seguros
-        SeguroCompletoModelo seguroCompleto = new SeguroCompletoModelo();
-        SeguroBasicoModelo seguroBasico = new SeguroBasicoModelo();
-
         Scanner scanner = new Scanner(System.in);
 
         ExcursionesControlador controladorEx = new ExcursionesControlador();
+        InscripcionesVista inscripcionesVista = new InscripcionesVista(controladorEx);
 
         SociosControlador controladorSoc = new SociosControlador();
 
